@@ -4,7 +4,11 @@ import axios from "axios";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 
-axios.defaults.baseURL = "http://localhost:8000";
+// Use when server is hosted locally
+// axios.defaults.baseURL = "http://localhost:8000";
+
+// Use when server is hosted on vercel
+axios.defaults.baseURL = "https://supra-coder-project-backend.vercel.app";
 
 function App() {
     return (
