@@ -111,8 +111,9 @@ export default function UserInventory(props: UserInventoryProps) {
                                         key={item._id}
                                         onClick={(event) => {
                                             if (
-                                                event.target ===
-                                                event.currentTarget
+                                                (event.target as Element)
+                                                    .className !==
+                                                "delete-item-button"
                                             ) {
                                                 setInspectedItem(item);
                                                 setViewItemPopupActive(true);

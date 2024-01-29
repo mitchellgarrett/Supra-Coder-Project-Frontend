@@ -1,10 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 export default function Register(props: HidableProps) {
-    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -50,7 +48,7 @@ export default function Register(props: HidableProps) {
                     passwordConfirmation: "",
                 });
                 toast.success("Registration successful");
-                navigate("/");
+                props.setVisibility(false);
             }
         } catch (error) {
             console.error(error);
